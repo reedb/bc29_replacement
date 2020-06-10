@@ -1,0 +1,42 @@
+Replacement PCB for BC29 AH Meter
+
+Low side shunt: 0.0006 Ohms = 0.6 mOhms => 10mA:6uV, 100A:60mV, 250A:150mV
+
+Low side current monitor ADC with +-150mV range.
+Dynamic range: 250/.01 = 1/25000 = 15 bits.
+
+The integrator output, at pin 6, triggers one of
+two comparators: IC2:A or IC2:C. IC2:C is triggered to give a low pulse when
+the integrator reaches -1.25V, signifying a discharge of 1/900 Ah, or 4
+Amp-seconds, or 4 coulombs. Conversely, IC2:A gives a low pulse when the
+integrator reaches +1.25V, signifying +4 coulombs of charge. A "charge" pulse
+sets flip-flop IC4:A (synchronized on the 1024Hz clock), causing the green LED
+to blink on the display, and causing 1/9 of a 0.01Ah count up on the display.
+
+
+That spacing seems reasonable. For potting I'm thinking of using "neutral-cure" RTV silicone.
+
+As far as the ADC is concerned I have the following specs:
+
+Low side shunt: 0.0006 Ohms = 0.6 mOhms => 10mA:6uV, 100A:60mV, 250A:150mV
+
+Low side current monitor ADC with +-150mV range.
+Dynamic range: 250/.01 = 1/25000 = 15 bits.
+
+This part looks interesting:
+
+LTC4150 Coulomb Counter IC
+
+https://learn.sparkfun.com/tutorials/ltc4150-coulomb-counter-hookup-guide/all
+
+
+
+Teledyne TSC900BIJA - Single Chopper-Stabilized Op Amp - SR 200mV/uS 
+Possible replacement: tlc2652a
+
+
+
+
+
+https://datasheets.maximintegrated.com/en/ds/DS2740.pdf
+http://www.ti.com/amplifier-circuit/current-sense/analog-output/products.html
