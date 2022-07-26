@@ -2927,10 +2927,8 @@ design rules under a new name.</description>
 <wire x1="67.31" y1="74.93" x2="61.28" y2="37" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+BATT">
-<contactref element="F1" pad="1"/>
 <contactref element="X1" pad="1@1"/>
 <contactref element="L1" pad="1"/>
-<wire x1="3.81" y1="71.12" x2="41.91" y2="80.01" width="0" layer="19" extent="1-1"/>
 <wire x1="21.94" y1="52.81" x2="3.81" y2="71.12" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FUSED_BATT+">
@@ -3008,6 +3006,8 @@ design rules under a new name.</description>
 <signal name="+BATT_FILT">
 <contactref element="L1" pad="2"/>
 <contactref element="C2" pad="+"/>
+<contactref element="F1" pad="1"/>
+<wire x1="29.21" y1="67.31" x2="41.91" y2="80.01" width="0" layer="19" extent="1-1"/>
 <wire x1="33.94" y1="56.41" x2="29.21" y2="67.31" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">

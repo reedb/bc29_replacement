@@ -20528,7 +20528,7 @@ Based on the following sources:
 <plain>
 <text x="63.5" y="63.5" size="1.778" layer="91">13.5VDC</text>
 <text x="63.5" y="63.5" size="1.778" layer="91">13.5VDC</text>
-<text x="58.42" y="68.58" size="5.08" layer="91">Positive Voltage Regulator</text>
+<text x="45.72" y="86.36" size="5.08" layer="91">Positive Voltage Regulator</text>
 </plain>
 <instances>
 <instance part="IC18" gate="G$1" x="91.44" y="53.34"/>
@@ -20559,12 +20559,6 @@ Based on the following sources:
 <busses>
 </busses>
 <nets>
-<net name="+BATT" class="0">
-<segment>
-<pinref part="F1" gate="G$1" pin="1"/>
-<wire x1="0" y1="60.96" x2="17.78" y2="60.96" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="GND" class="0">
 <segment>
 <pinref part="E2" gate="G$1" pin="-"/>
@@ -20702,6 +20696,12 @@ Based on the following sources:
 <wire x1="106.68" y1="55.88" x2="106.68" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="IC18" gate="G$1" pin="FB"/>
 <wire x1="106.68" y1="50.8" x2="104.14" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="+BATT_FILT" class="0">
+<segment>
+<pinref part="F1" gate="G$1" pin="1"/>
+<wire x1="0" y1="60.96" x2="17.78" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
