@@ -40,3 +40,5 @@ Possible replacement: tlc2652a
 
 https://datasheets.maximintegrated.com/en/ds/DS2740.pdf
 http://www.ti.com/amplifier-circuit/current-sense/analog-output/products.html
+
+https://microcontrollerslab.com/74hc595-shift-register-interfacing-arduino/

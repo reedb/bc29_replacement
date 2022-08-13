@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -19834,11 +19834,17 @@ Based on the following sources:
 <part name="C4" library="rcl" deviceset="C-EU" device="C0805" value="47pF"/>
 <part name="C5" library="rcl" deviceset="C-EU" device="C0805" value="47pF"/>
 <part name="IC1" library="74xx-us" deviceset="74*596" device="D" technology="LS" value="74HCS596D"/>
+<part name="IC2" library="74xx-us" deviceset="74*596" device="D" technology="LS" value="74HCS596D"/>
+<part name="SUPPLY13" library="supply2" deviceset="GND" device=""/>
+<part name="SUPPLY14" library="supply2" deviceset="GND" device=""/>
+<part name="C6" library="rcl" deviceset="C-EU" device="C0805" value=".1uF"/>
+<part name="SUPPLY15" library="supply2" deviceset="VCC" device=""/>
+<part name="R4" library="rcl" deviceset="R-EU_" device="R0805" value="20.0K "/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="342.9" y="45.72" size="5.08" layer="91">To LCD Module</text>
+<text x="396.24" y="45.72" size="5.08" layer="91">To LCD Module</text>
 <text x="391.16" y="10.16" size="1.778" layer="91">nc</text>
 <text x="391.16" y="25.4" size="1.778" layer="91">nc</text>
 <text x="411.48" y="-7.62" size="1.27" layer="91">45Hz Square Wave +5VDC/GND, from MM74C945</text>
@@ -19896,6 +19902,20 @@ Based on the following sources:
 <instance part="SUPPLY3" gate="+5V" x="363.22" y="-10.16" rot="R90"/>
 <instance part="R1" gate="G$1" x="373.38" y="-10.16"/>
 <instance part="IC1" gate="A" x="195.58" y="22.86"/>
+<instance part="IC2" gate="A" x="195.58" y="-22.86"/>
+<instance part="SUPPLY13" gate="GND" x="180.34" y="5.08"/>
+<instance part="SUPPLY14" gate="GND" x="180.34" y="-40.64"/>
+<instance part="C6" gate="G$1" x="261.62" y="-45.72" smashed="yes">
+<attribute name="NAME" x="263.144" y="-45.339" size="1.778" layer="95"/>
+<attribute name="VALUE" x="263.144" y="-50.419" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY15" gate="G$1" x="149.86" y="-20.32" smashed="yes" rot="R90">
+<attribute name="VALUE" x="146.685" y="-22.225" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R4" gate="G$1" x="160.02" y="-20.32" smashed="yes" rot="R180">
+<attribute name="NAME" x="163.83" y="-16.7386" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="163.83" y="-22.098" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -19910,6 +19930,18 @@ Based on the following sources:
 <pinref part="IC17" gate="P" pin="VSS"/>
 <pinref part="SUPPLY2" gate="GND" pin="GND"/>
 <wire x1="271.78" y1="-58.42" x2="271.78" y2="-55.88" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="A" pin="G"/>
+<wire x1="182.88" y1="10.16" x2="180.34" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="SUPPLY13" gate="GND" pin="GND"/>
+<wire x1="180.34" y1="10.16" x2="180.34" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="IC2" gate="A" pin="G"/>
+<wire x1="182.88" y1="-35.56" x2="180.34" y2="-35.56" width="0.1524" layer="91"/>
+<pinref part="SUPPLY14" gate="GND" pin="GND"/>
+<wire x1="180.34" y1="-35.56" x2="180.34" y2="-38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -19971,6 +20003,10 @@ Based on the following sources:
 <wire x1="317.5" y1="-55.88" x2="317.5" y2="-58.42" width="0.1524" layer="91"/>
 <label x="317.5" y="-58.42" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
+<segment>
+<wire x1="208.28" y1="30.48" x2="223.52" y2="30.48" width="0.1524" layer="91"/>
+<label x="223.52" y="30.48" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="MINUS_SIGN_ON" class="0">
 <segment>
@@ -19978,12 +20014,20 @@ Based on the following sources:
 <wire x1="307.34" y1="-55.88" x2="307.34" y2="-58.42" width="0.1524" layer="91"/>
 <label x="307.34" y="-58.42" size="1.27" layer="95" rot="R270" xref="yes"/>
 </segment>
+<segment>
+<wire x1="208.28" y1="27.94" x2="220.98" y2="27.94" width="0.1524" layer="91"/>
+<label x="220.98" y="27.94" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="COLON_ON" class="0">
 <segment>
 <pinref part="IC17" gate="A" pin="I0"/>
 <wire x1="332.74" y1="-55.88" x2="332.74" y2="-58.42" width="0.1524" layer="91"/>
 <label x="332.74" y="-58.42" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<wire x1="208.28" y1="33.02" x2="223.52" y2="33.02" width="0.1524" layer="91"/>
+<label x="223.52" y="33.02" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="!LCD_COUNTER_CARRY" class="0">
@@ -20049,6 +20093,7 @@ Based on the following sources:
 <pinref part="J2" gate="-1" pin="KL"/>
 <wire x1="393.7" y1="38.1" x2="368.3" y2="38.1" width="0.1524" layer="91"/>
 <label x="370.84" y="38.1" size="1.27" layer="95"/>
+<label x="368.3" y="38.1" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="LCD_COUNTER_BLANK" class="0">
@@ -20078,6 +20123,65 @@ Based on the following sources:
 <pinref part="IC17" gate="P" pin="VDD"/>
 <pinref part="SUPPLY1" gate="+12V" pin="+12V"/>
 <wire x1="271.78" y1="-38.1" x2="271.78" y2="-40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="IC1" gate="A" pin="QH*"/>
+<wire x1="210.82" y1="10.16" x2="208.28" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="-2.54" x2="180.34" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="-2.54" x2="180.34" y2="-12.7" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="A" pin="SER"/>
+<wire x1="180.34" y1="-12.7" x2="182.88" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="10.16" x2="210.82" y2="-2.54" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="SCK" class="0">
+<segment>
+<pinref part="IC1" gate="A" pin="SCK"/>
+<wire x1="182.88" y1="27.94" x2="172.72" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="A" pin="SCK"/>
+<wire x1="182.88" y1="-17.78" x2="172.72" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="-17.78" x2="172.72" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="27.94" x2="157.48" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="27.94" x2="157.48" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="30.48" x2="152.4" y2="30.48" width="0.1524" layer="91"/>
+<label x="152.4" y="30.48" size="1.778" layer="95" rot="R180" xref="yes"/>
+<junction x="172.72" y="27.94"/>
+</segment>
+</net>
+<net name="SCL" class="0">
+<segment>
+<pinref part="IC2" gate="A" pin="SCL"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="165.1" y1="-20.32" x2="170.18" y2="-20.32" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="A" pin="SCL"/>
+<wire x1="170.18" y1="-20.32" x2="182.88" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="25.4" x2="170.18" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="25.4" x2="170.18" y2="-20.32" width="0.1524" layer="91"/>
+<junction x="170.18" y="-20.32"/>
+<wire x1="170.18" y1="25.4" x2="152.4" y2="25.4" width="0.1524" layer="91"/>
+<label x="152.4" y="25.4" size="1.778" layer="95" rot="R180" xref="yes"/>
+<junction x="170.18" y="25.4"/>
+</segment>
+</net>
+<net name="VCC" class="0">
+<segment>
+<pinref part="SUPPLY15" gate="G$1" pin="VCC"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="154.94" y1="-20.32" x2="152.4" y2="-20.32" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="RCK" class="0">
+<segment>
+<pinref part="IC1" gate="A" pin="RCK"/>
+<wire x1="182.88" y1="20.32" x2="175.26" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="20.32" x2="175.26" y2="-25.4" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="A" pin="RCK"/>
+<wire x1="175.26" y1="-25.4" x2="182.88" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="20.32" x2="152.4" y2="20.32" width="0.1524" layer="91"/>
+<label x="152.4" y="20.32" size="1.778" layer="95" rot="R180" xref="yes"/>
+<junction x="175.26" y="20.32"/>
 </segment>
 </net>
 </nets>
